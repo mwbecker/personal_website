@@ -3,7 +3,7 @@
   <div class="main">
     <div class = "jobItem" v-for="(item, index) in jobData" :key="index">
         <div  v-for="(property, property_index) in item" :key="property_index">
-               <a> {{ toTitleCase(property_index.replace("_", " "))}} </a>:
+               <a> <strong> {{ toTitleCase(property_index.replace("_", " "))}} </strong> </a>:
                <a> {{ property }} </a>
         </div>
     </div>
