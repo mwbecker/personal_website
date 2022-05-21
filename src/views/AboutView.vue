@@ -1,7 +1,7 @@
 <template>
   <div class="about">
      <h1> Michael Becker </h1>
-    <SkillsComponent/>
+    <MainContent/>
 
   </div>
 </template>
@@ -9,12 +9,12 @@
 
 <script>
 // @ is an alias to /src
-import SkillsComponent from '@/components/SkillsComponent.vue'
+import MainContent from '@/components/MainContent.vue'
 
 export default {
   name: 'AboutView',
   components: {
-    SkillsComponent
-  }
+    MainContent,
+}
 }
 </script>

@@ -1,9 +1,12 @@
 <template>
    
   <div class="main">
+    <h3> Experiences </h3>
+   <briefcase-outline style="color: gray; "></briefcase-outline>
+
     <div class = "jobItem" v-for="(item, index) in jobData" :key="index">
         <div  v-for="(property, property_index) in item" :key="property_index">
-               <a> <strong> {{ toTitleCase(property_index.replace("_", " "))}} </strong> </a>:
+               <a class="descrFont"> <strong> {{ toTitleCase(property_index.replace("_", " "))}} </strong> </a>:
                <a> {{ property }} </a>
         </div>
     </div>
@@ -11,14 +14,20 @@
 </template>
 
 <script>
+import { BriefcaseOutline } from 'mdue';
+
 export default {
+  
   name: 'SkillsComponent',
+  components: {
+    BriefcaseOutline
+  },
 data: function () {
     return {
      jobData : [{job_name :'Full Stack Developer', 
-               company:'US Steel', start_date:'Jun 2021', end_date:'Present',
+               company:'US Steel', dates_worked:'Jun 2021 - Present',
                 }, {job_name:'Application Developer Intern', 
-               company:'US Steel', start_date:'Jan 2020', end_date:'May 2021',
+               company:'US Steel', dates_worked:'Jan 2020 - May 2021',
                 } ]
     }
   } ,
@@ -45,8 +54,15 @@ data: function () {
 .jobItem {
     margin: 0.75em 0.5em 0.75em 1em;
     padding: 0.75em 0.5em 0.75em 1em;
-    border-style: dotted ;
-    border-color: black;
+    border: 1px dotted black;
+    text-align: left;
 
+
+}
+
+
+
+.descrFont {
+  color: #4a4444;
 }
 </style>
