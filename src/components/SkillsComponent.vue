@@ -2,7 +2,19 @@
    
   <div class="main">
     <h3> Experiences </h3>
-
+    
+    <div class = "sortContainer">
+      <p class = "sorterFields">  <strong> Date </strong> 
+       <arrow-up v-if="sortedStatus['date']=='Up'"> </arrow-up>
+       <arrow-down v-if="sortedStatus['date']=='Down'"> </arrow-down>
+       </p>  
+    
+      <p class = "sorterFields">  <strong> Relevance </strong>  
+      <arrow-up v-if="sortedStatus['relevance']=='Up'" > </arrow-up> 
+      <arrow-down v-if="sortedStatus['relevance']=='Down'" > </arrow-down> 
+      </p>  
+      
+    </div>
     <div class = "jobItem" v-for="(item, index) in jobData" :key="index">
 
         <!-- Render icon for type of item  -->
@@ -36,7 +48,9 @@ import { BriefcaseOutline,
          CalendarOutline,
          MapMarkerRadiusOutline,
          SchoolOutline,
-         TextBoxOutline
+         TextBoxOutline,
+         ArrowUp,
+         ArrowDown
 } from 'mdue';
 
 export default {
@@ -48,11 +62,18 @@ export default {
     CalendarOutline,
     MapMarkerRadiusOutline,
     SchoolOutline,
-    TextBoxOutline
+    TextBoxOutline,
+    ArrowUp,
+    ArrowDown
   },
 data: function () {
     return {
      hide_data: ['type', 'logical_date', 'relevance_index'],
+     sortedStatus: 
+    {
+      'dates': null,
+      'relevance': null
+    },
      jobData : [{ job_name :'Full Stack Developer, Digital Studio', 
                   company:'US Steel',
                   dates_worked:'Jun 2021 - Present',
@@ -132,7 +153,7 @@ data: function () {
   {
     // this.sortByDate();
     // this.sortByRelevance();
-    
+
   },
   props: {
     
@@ -150,6 +171,28 @@ data: function () {
     text-align: left;
 
 
+}
+
+.sorterFields
+{
+  display:inline;
+  position: relative;
+  cursor:pointer;
+  background-color: #e9e9e9;
+  margin-right: 1em;
+  padding: 2px 5px 2px 5px;
+  border-radius: 0.5rem;
+}
+
+.sorterFields:hover
+{
+  background-color: #d6d5d5;
+}
+
+.sortContainer
+{
+  text-align: left;
+  margin-left:1em;
 }
 
 .jobIcon
