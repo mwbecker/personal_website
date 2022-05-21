@@ -183,6 +183,7 @@ data: function () {
 {
   text-align: left;
   margin-left:1em;
+  margin-bottom:1em;
 }
 
 .jobIcon
@@ -202,5 +203,7 @@ data: function () {
   display:inline;
   position: relative;
   width: 50%;
+  border-right: 1px solid black;
+  margin-right: 1em;
 }
 </style>
