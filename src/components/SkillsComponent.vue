@@ -4,15 +4,14 @@
     <h3> Experience </h3>
     <div class = "sortContainer">
       <a> Sort By: </a>
-      <p @click = "toggleSort('logical_date')" class = "sorterFields">  <strong> Date </strong> 
-       <arrow-up v-if="sortedStatuses['logical_date']=='Up'"> </arrow-up>
-       <arrow-down v-if="sortedStatuses['logical_date']=='Down'"> </arrow-down>
-       </p>  
-      | &nbsp;
-      <p @click = "toggleSort('relevance_index')" class = "sorterFields">  <strong> Relevance </strong>  
-      <arrow-up v-if="sortedStatuses['relevance_index']=='Up'" > </arrow-up> 
-      <arrow-down v-if="sortedStatuses['relevance_index']=='Down'" > </arrow-down> 
-      </p>  
+
+      <div class = "sorterOption" v-for="(option, option_index) in getSortKeys" :key="option_index">
+        <p  @click = "toggleSort(option)" class = "sorterFields">  
+        <strong> {{(option in sortingDescrMapping) ? sortingDescrMapping[option] : toTitleCase(option.replace("_", " ")) }} </strong> 
+        <arrow-up v-if="sortedStatuses[option]=='Up'"> </arrow-up>
+        <arrow-down v-if="sortedStatuses[option]=='Down'"> </arrow-down>
+        </p>  
+      </div>
       
     </div>
     <div :class= "(index%2==0) ? 'jobItem' : 'jobItemGreyed'" v-for="(item, index) in jobData" :key="index">
@@ -76,6 +75,11 @@ data: function () {
       'logical_date': null,
       'relevance_index': null
     },
+    sortingDescrMapping:
+    {
+      'logical_date':"Date",
+      'relevance_index':"Relevance"
+    },
      jobData : JobsListingObject.getJobs()
     }
   } ,
@@ -128,12 +132,13 @@ data: function () {
   },
   mounted: function()
   {
-    // this.sortByDate();
-    // this.sortByRelevance();
-
   },
-  props: {
-    
+  computed:
+  {
+     getSortKeys()
+     {
+       return Object.keys(this.sortedStatuses);
+     }
   }
 }
 </script>
@@ -189,8 +194,13 @@ data: function () {
   margin-right: 0.5em;
 }
 
-
 .descrFont {
   color: #4a4444;
+}
+
+.sorterOption{
+  display:inline;
+  position: relative;
+  width: 50%;
 }
 </style>
