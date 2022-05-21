@@ -2,16 +2,16 @@
    
   <div class="main">
     <h3> Experiences </h3>
-    
     <div class = "sortContainer">
-      <p class = "sorterFields">  <strong> Date </strong> 
-       <arrow-up v-if="sortedStatus['date']=='Up'"> </arrow-up>
-       <arrow-down v-if="sortedStatus['date']=='Down'"> </arrow-down>
+      <a> Sort By: </a>
+      <p @click = "toggleSort('logical_date')" class = "sorterFields">  <strong> Date </strong> 
+       <arrow-up v-if="sortedStatuses['logical_date']=='Up'"> </arrow-up>
+       <arrow-down v-if="sortedStatuses['logical_date']=='Down'"> </arrow-down>
        </p>  
     
-      <p class = "sorterFields">  <strong> Relevance </strong>  
-      <arrow-up v-if="sortedStatus['relevance']=='Up'" > </arrow-up> 
-      <arrow-down v-if="sortedStatus['relevance']=='Down'" > </arrow-down> 
+      <p @click = "toggleSort('relevance_index')" class = "sorterFields">  <strong> Relevance </strong>  
+      <arrow-up v-if="sortedStatuses['relevance_index']=='Up'" > </arrow-up> 
+      <arrow-down v-if="sortedStatuses['relevance_index']=='Down'" > </arrow-down> 
       </p>  
       
     </div>
@@ -69,10 +69,10 @@ export default {
 data: function () {
     return {
      hide_data: ['type', 'logical_date', 'relevance_index'],
-     sortedStatus: 
+     sortedStatuses: 
     {
-      'dates': null,
-      'relevance': null
+      'logical_date': null,
+      'relevance_index': null
     },
      jobData : [{ job_name :'Full Stack Developer, Digital Studio', 
                   company:'US Steel',
@@ -140,13 +140,32 @@ data: function () {
             }
         )
       },
-        sortByDate()
+        sortBy(field_name, direction)
         {
-            this.jobData.sort((a, b) => a.logical_date - b.logical_date);
+            if (direction == "Up") {
+              this.jobData.sort((a, b) => a[field_name] - b[field_name]);
+            }
+            else  {
+              this.jobData.sort((a, b) => a[field_name] - b[field_name]).reverse();
+            }
         },
-        sortByRelevance()
+        toggleSort:function(field_name)
         {
-           this.jobData.sort((a, b) => a.relevance_index - b.relevance_index);
+          if (this.sortedStatuses[field_name] == 'Up')
+          {
+              this.sortedStatuses[field_name] = "Down"
+              this.jobData.reverse();
+          }
+          else if (this.sortedStatuses[field_name] == 'Down')
+          {
+              this.sortedStatuses[field_name] = "Up"
+              this.jobData.reverse();
+          }
+          else {
+            this.sortedStatuses[field_name] = "Up"
+            this.sortBy(field_name, "Up")
+          }
+
         }
   },
   mounted: function()
