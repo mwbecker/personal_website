@@ -149,19 +149,28 @@ data: function () {
               this.jobData.sort((a, b) => a[field_name] - b[field_name]).reverse();
             }
         },
+        clearOutOtherSorts(selected_field)
+        {
+          for (let i = 0; i < Object.keys(this.sortedStatuses).length; i++) 
+             if ( Object.keys(this.sortedStatuses)[i] != selected_field)
+               this.sortedStatuses[Object.keys(this.sortedStatuses)[i]] = null
+        },
         toggleSort:function(field_name)
         {
           if (this.sortedStatuses[field_name] == 'Up')
           {
+              this.clearOutOtherSorts(field_name)
               this.sortedStatuses[field_name] = "Down"
               this.jobData.reverse();
           }
           else if (this.sortedStatuses[field_name] == 'Down')
           {
+              this.clearOutOtherSorts(field_name)
               this.sortedStatuses[field_name] = "Up"
               this.jobData.reverse();
           }
           else {
+            this.clearOutOtherSorts(field_name)
             this.sortedStatuses[field_name] = "Up"
             this.sortBy(field_name, "Up")
           }
