@@ -1,21 +1,21 @@
 <template>
    
   <div class="main">
-    <h3> Experiences </h3>
+    <h3> Experience </h3>
     <div class = "sortContainer">
       <a> Sort By: </a>
       <p @click = "toggleSort('logical_date')" class = "sorterFields">  <strong> Date </strong> 
        <arrow-up v-if="sortedStatuses['logical_date']=='Up'"> </arrow-up>
        <arrow-down v-if="sortedStatuses['logical_date']=='Down'"> </arrow-down>
        </p>  
-    
+      | &nbsp;
       <p @click = "toggleSort('relevance_index')" class = "sorterFields">  <strong> Relevance </strong>  
       <arrow-up v-if="sortedStatuses['relevance_index']=='Up'" > </arrow-up> 
       <arrow-down v-if="sortedStatuses['relevance_index']=='Down'" > </arrow-down> 
       </p>  
       
     </div>
-    <div class = "jobItem" v-for="(item, index) in jobData" :key="index">
+    <div :class= "(index%2==0) ? 'jobItem' : 'jobItemGreyed'" v-for="(item, index) in jobData" :key="index">
 
         <!-- Render icon for type of item  -->
         <briefcase-outline v-if="jobData[index]['type']=='job'" class="jobIcon" ></briefcase-outline>
@@ -199,6 +199,14 @@ data: function () {
     text-align: left;
 
 
+}
+
+.jobItemGreyed{
+    margin: 0.75em 0.5em 0.75em 1em;
+    padding: 0.75em 0.5em 0.75em 1em;
+    border: 1px dotted black;
+    text-align: left;
+    background-color: #eeeeee;
 }
 
 .sorterFields
