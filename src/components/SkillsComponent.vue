@@ -11,7 +11,7 @@
         <strong> {{(option in sortingDescrMapping) ? sortingDescrMapping[option] : toTitleCase(option.replace("_", " ")) }} </strong> 
         <arrow-up v-if="sortedStatuses[option]=='Up'"> </arrow-up>
         <arrow-down v-if="sortedStatuses[option]=='Down'"> </arrow-down>
-        </p>  
+        </p>
       </div>
       
     </div>
@@ -173,13 +173,14 @@ data: function () {
 {
   width: 50vw;
   display: block;
+  overflow:hidden;
 }
 
 
 .textContainer
 {
   width: 67%;
-  white-space: nowrap;
+  overflow: hidden;
 
 }
 
@@ -187,6 +188,7 @@ data: function () {
 {
   width:12vh;
   float:left;
+  height: 100%;
   display: block;
   margin-right: 2vw;
   margin-bottom:1vh;
