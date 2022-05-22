@@ -3,10 +3,11 @@
   <div class="main">
     <h3> Experience </h3>
     <div class = "sortContainer">
-      <a> Sort By: </a>
-
+      <a> Sort By: </a> &nbsp;
+      <!-- Iterate through fileds to sort and create buttons -->
       <div class = "sorterOption" v-for="(option, option_index) in getSortKeys" :key="option_index">
         <p  @click = "toggleSort(option)" class = "sorterFields">  
+        <!-- If there is no expanded description mapped for sort field, display raw field -->
         <strong> {{(option in sortingDescrMapping) ? sortingDescrMapping[option] : toTitleCase(option.replace("_", " ")) }} </strong> 
         <arrow-up v-if="sortedStatuses[option]=='Up'"> </arrow-up>
         <arrow-down v-if="sortedStatuses[option]=='Down'"> </arrow-down>
@@ -22,7 +23,7 @@
         <!-- Render icon for type of item  -->
 
         <div v-for="(property, property_index) in item" :key="property_index">
-              <div v-if="!hide_data.includes(property_index)">
+              <div class = "innerJobText" v-if="!hide_data.includes(property_index)">
               
               <!-- Render property icons for job items -->
               <domain v-if="property_index=='company'" class = "jobIcon"> </domain>
@@ -162,6 +163,10 @@ data: function () {
     text-align: left;
     background-color: #f1f1f1;
 }
+.innerJobText
+{
+  width: 50vw;
+}
 
 .sorterFields
 {
@@ -170,8 +175,9 @@ data: function () {
   cursor:pointer;
   background-color: #e9e9e9;
   margin-right: 1em;
-  padding: 2px 5px 2px 5px;
-  border-radius: 0.5rem;
+  padding: 2px 7px 2px 7px;
+  border-radius: 0.25rem;
+  user-select:none;
 }
 
 .sorterFields:hover

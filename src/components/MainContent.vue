@@ -2,11 +2,12 @@
 <div class = "mainContent">
   <div class="container">
     <div class = "typed-out"> Welcome to my website </div>
-    <!-- <div class = "introView" >
-    <p> Hi, I'm Michael, and I'm passionate about delivering web based solutions
-       that enable people to dynamically view and interact with data </p>
-    </div> -->
   </div>
+  <br>
+   <div class = "introView" >
+    <p> Hi, I'm Michael, and I'm passionate about delivering web based solutions <br/>
+       that enable people to dynamically view and interact with data </p>
+    </div>
   </div>
 </template>
 
@@ -24,20 +25,53 @@ export default {
 
 .introView
 {
-  text-align: left;
+  text-align: center;
+  display: inline-block;
+  color: black;
+  font-size: 1.25em;
+  animation: fadeIn linear 2s;
+  -webkit-animation: fadeIn linear 2s;
+  -moz-animation: fadeIn linear 2s;
+  -o-animation: fadeIn linear 2s;
+  -ms-animation: fadeIn linear 2s;
   
 }
 
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
 .mainContent
-{
-   width: 33%;
-   margin-left: 33%;
+{   
+   margin:auto;
+
 }
 
 .typed-out {
   overflow: hidden;
   border-right: .1em solid orange;
-  font-size: 2em;
+  font-size: 1.5em;
   width: 0;
   white-space: nowrap;
   height: 1.5em;
