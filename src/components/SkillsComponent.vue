@@ -22,20 +22,17 @@
         </div>
         
        <div class = "textContainer">
-          <!-- Render icon for type of item  -->
-          <briefcase-outline v-if="jobData[index]['type']=='job'" class="jobIcon" ></briefcase-outline>
-          <school-outline v-if="jobData[index]['type']=='school'" class="jobIcon" ></school-outline>
-          <!-- Render icon for type of item  -->
-
+         
         <div v-for="(property, property_index) in item" :key="property_index">
               <div class = "innerJobText" v-if="!hide_data.includes(property_index)">
                 
-                <!-- Render property icons for job items -->
+                <!-- Render icon for type of item  -->
+                <briefcase-outline v-if="property_index=='job_name' && jobData[index]['type']=='job'" class="jobIcon" ></briefcase-outline>
+                <school-outline v-if="['project', 'position'].includes(property_index)  && jobData[index]['type']=='school'" class="jobIcon" ></school-outline>
                 <domain v-if="property_index=='company'" class = "jobIcon"> </domain>
                 <calendar-outline v-if="property_index=='dates_worked'" class = "jobIcon"> </calendar-outline>
                 <map-marker-radius-outline v-if="property_index=='location'" class = "jobIcon"> </map-marker-radius-outline>
                 <text-box-outline v-if="property_index=='description'" class = "jobIcon"> </text-box-outline>
-
                 <!-- Render property icons for job items -->
 
                 <a class="descrFont"> <strong> {{ toTitleCase(property_index.replace("_", " "))}} </strong> </a>:
@@ -188,7 +185,6 @@ data: function () {
 {
   width:12vh;
   float:left;
-  height: 100%;
   display: block;
   margin-right: 2vw;
   margin-bottom:1vh;
