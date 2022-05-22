@@ -5,8 +5,11 @@
   </div>
   <br>
    <div class = "introView" >
+         <div class ="profile_picture"> </div>
+
     <p> Hi, I'm Michael, and I'm passionate about delivering web based solutions <br/>
        that enable people to dynamically view and interact with data </p>
+
     </div>
   </div>
 </template>
@@ -22,12 +25,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style >
+.profile_picture{
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  background-image: url('./../assets/editedGOod.png');
+}
 
 .introView
 {
   text-align: center;
   display: inline-block;
-  color: black;
   font-size: 1.25em;
   animation: fadeIn linear 2s;
   -webkit-animation: fadeIn linear 2s;

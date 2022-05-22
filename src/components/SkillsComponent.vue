@@ -16,28 +16,33 @@
       
     </div>
     <div :class= "(index%2==0) ? 'jobItem' : 'jobItemGreyed'" v-for="(item, index) in jobData" :key="index">
-
-        <!-- Render icon for type of item  -->
-        <briefcase-outline v-if="jobData[index]['type']=='job'" class="jobIcon" ></briefcase-outline>
-        <school-outline v-if="jobData[index]['type']=='school'" class="jobIcon" ></school-outline>
-        <!-- Render icon for type of item  -->
+        
+        <div class = "imageContainer"> 
+           <img class ="companyLogoImg" :src="getImgUrl(item.img_src)" >
+        </div>
+        
+       <div class = "textContainer">
+          <!-- Render icon for type of item  -->
+          <briefcase-outline v-if="jobData[index]['type']=='job'" class="jobIcon" ></briefcase-outline>
+          <school-outline v-if="jobData[index]['type']=='school'" class="jobIcon" ></school-outline>
+          <!-- Render icon for type of item  -->
 
         <div v-for="(property, property_index) in item" :key="property_index">
               <div class = "innerJobText" v-if="!hide_data.includes(property_index)">
-              
-              <!-- Render property icons for job items -->
-              <domain v-if="property_index=='company'" class = "jobIcon"> </domain>
-              <calendar-outline v-if="property_index=='dates_worked'" class = "jobIcon"> </calendar-outline>
-              <map-marker-radius-outline v-if="property_index=='location'" class = "jobIcon"> </map-marker-radius-outline>
-              <text-box-outline v-if="property_index=='description'" class = "jobIcon"> </text-box-outline>
+                
+                <!-- Render property icons for job items -->
+                <domain v-if="property_index=='company'" class = "jobIcon"> </domain>
+                <calendar-outline v-if="property_index=='dates_worked'" class = "jobIcon"> </calendar-outline>
+                <map-marker-radius-outline v-if="property_index=='location'" class = "jobIcon"> </map-marker-radius-outline>
+                <text-box-outline v-if="property_index=='description'" class = "jobIcon"> </text-box-outline>
 
-              <!-- Render property icons for job items -->
+                <!-- Render property icons for job items -->
 
-               <a class="descrFont"> <strong> {{ toTitleCase(property_index.replace("_", " "))}} </strong> </a>:
-               <a class = "expandedText"> {{ property }} </a>
-               </div>
-        </div>
-
+                <a class="descrFont"> <strong> {{ toTitleCase(property_index.replace("_", " "))}} </strong> </a>:
+                <a class = "expandedText"> {{ property }} </a>
+              </div>
+         </div>
+      </div>
     </div>
   </div>
 </template>
@@ -52,6 +57,7 @@ import { BriefcaseOutline,
          ArrowUp,
          ArrowDown
 } from 'mdue';
+
 
 import JobsListingObject from './JobsListing';
 
@@ -70,7 +76,7 @@ export default {
   },
 data: function () {
     return {
-     hide_data: ['type', 'logical_date', 'relevance_index'],
+     hide_data: ['type', 'logical_date', 'relevance_index', 'img_src'],
      sortedStatuses: 
     {
       'logical_date': null,
@@ -86,6 +92,11 @@ data: function () {
   } ,
   methods:
   {
+
+    getImgUrl(img) {
+      var images = require.context('../assets/', false, /\.png$/)
+      return images('./' + img + ".png")
+    },
       toTitleCase: function(str) {
         return str.replace(
             /\w\S*/g,
@@ -147,31 +158,46 @@ data: function () {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 
-.jobItem {
-    margin: 0.75em 0.5em 0.75em 1em;
+.jobItem, .jobItemGreyed  {
+    margin: 0.75em 0.5em 1.1em 1em;
     padding: 0.75em 0.5em 0.75em 1em;
     border: 1px dotted black;
     text-align: left;
     line-height: 1.3em;
-
-
 }
 
-
-
 .jobItemGreyed{
-    margin: 0.75em 0.5em 0.75em 1em;
-    padding: 0.75em 0.5em 0.75em 1em;
-    border: 1px dotted black;
-    text-align: left;
     background-color: #f5f4f4;
 }
 .innerJobText
 {
   width: 50vw;
+  display: block;
 }
 
 
+.textContainer
+{
+  width: 67%;
+  white-space: nowrap;
+
+}
+
+.imageContainer
+{
+  width:12vh;
+  float:left;
+  display: block;
+  margin-right: 2vw;
+  margin-bottom:1vh;
+}
+
+.companyLogoImg
+{
+  width:100%;
+  float:left;
+  margin-right: 2em;
+}
 .sorterFields
 {
   display:inline;
