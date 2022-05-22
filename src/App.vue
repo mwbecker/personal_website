@@ -8,6 +8,8 @@
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -29,6 +31,11 @@ nav a.router-link-exact-active {
   font-weight: bold;
 
 }
+
+html * {
+  font-family: 'Work Sans', sans-serif;
+}
+
 </style>
 
 <script>

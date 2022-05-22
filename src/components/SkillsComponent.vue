@@ -34,7 +34,7 @@
               <!-- Render property icons for job items -->
 
                <a class="descrFont"> <strong> {{ toTitleCase(property_index.replace("_", " "))}} </strong> </a>:
-               <a> {{ property }} </a>
+               <a class = "expandedText"> {{ property }} </a>
                </div>
         </div>
 
@@ -152,21 +152,25 @@ data: function () {
     padding: 0.75em 0.5em 0.75em 1em;
     border: 1px dotted black;
     text-align: left;
+    line-height: 1.3em;
 
 
 }
+
+
 
 .jobItemGreyed{
     margin: 0.75em 0.5em 0.75em 1em;
     padding: 0.75em 0.5em 0.75em 1em;
     border: 1px dotted black;
     text-align: left;
-    background-color: #f1f1f1;
+    background-color: #f5f4f4;
 }
 .innerJobText
 {
   width: 50vw;
 }
+
 
 .sorterFields
 {
@@ -175,6 +179,7 @@ data: function () {
   cursor:pointer;
   background-color: #e9e9e9;
   margin-right: 1em;
+  font-size: 1.1em;
   padding: 2px 7px 2px 7px;
   border-radius: 0.25rem;
   user-select:none;
@@ -202,7 +207,13 @@ data: function () {
 }
 
 .descrFont {
-  color: #4a4444;
+  color: #2e2b2b;
+  font-size:1.05em;
+
+}
+
+.expandedText{
+  font-size:1.05em;
 }
 
 .sorterOption{
@@ -212,4 +223,6 @@ data: function () {
   border-right: 1px solid black;
   margin-right: 1em;
 }
+
+
 </style>
