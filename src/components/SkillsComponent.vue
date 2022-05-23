@@ -183,11 +183,13 @@ data: function () {
 
 .imageContainer
 {
-  width:12vh;
+  width:8vw;
+  max-width:100px;
+  min-width: 75px;
   float:left;
   display: block;
   margin-right: 2vw;
-  margin-bottom:1vh;
+  margin-bottom: 1vh;
 }
 
 .companyLogoImg
