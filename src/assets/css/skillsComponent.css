@@ -92,3 +92,8 @@
   border-right: 1px solid black;
   margin-right: 1em;
 }
+
+.filterContainer{
+  margin-right: 0.5em;
+  border: 0.5px solid #2e2b2b ;
+}

@@ -4,7 +4,7 @@
     <h3> Experience </h3>
 
     <div class = "sortContainer">
-      <hr class = ""/>
+      <hr class = "filterContainer"/>
       <a> Sort By: </a> &nbsp;
       <!-- Iterate through fileds to sort and create buttons -->
       <div class = "sorterOption" v-for="(option, option_index) in getSortKeys" :key="option_index">
@@ -15,7 +15,7 @@
         <arrow-down v-if="sortedStatuses[option]=='Down'"> </arrow-down>
         </p>
       </div>
-      <hr/>
+      <hr class = "filterContainer"/>
     </div>
     <div :class= "(index%2==0) ? 'jobItem' : 'jobItemGreyed'" v-for="(item, index) in jobData" :key="index">
         
