@@ -14,6 +14,8 @@
   </div>
 </template>
 
+<style>  @import '@/assets/css/about.css'; </style> 
+
 <script>
 export default {
   name: 'MainContent',
@@ -23,83 +25,3 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style >
-.profile_picture{
-  display: inline-block;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-
-  background-image: url('./../assets/editedGOod.png');
-}
-
-.introView
-{
-  text-align: center;
-  display: inline-block;
-  font-size: 1.25em;
-  animation: fadeIn linear 2s;
-  -webkit-animation: fadeIn linear 2s;
-  -moz-animation: fadeIn linear 2s;
-  -o-animation: fadeIn linear 2s;
-  -ms-animation: fadeIn linear 2s;
-  
-}
-
-@keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-
-@-moz-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-
-@-webkit-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-
-@-o-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-
-@-ms-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-
-.mainContent
-{   
-   margin:auto;
-
-}
-
-.typed-out {
-  overflow: hidden;
-  border-right: .1em solid orange;
-  font-size: 1.5em;
-  width: 0;
-  white-space: nowrap;
-  height: 1.5em;
-  animation: typing 1.5s forwards;
-
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-.container {
-  display: inline-block;
-}
-
-</style>

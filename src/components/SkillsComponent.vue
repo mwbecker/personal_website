@@ -2,7 +2,9 @@
    
   <div class="main">
     <h3> Experience </h3>
+
     <div class = "sortContainer">
+      <hr class = ""/>
       <a> Sort By: </a> &nbsp;
       <!-- Iterate through fileds to sort and create buttons -->
       <div class = "sorterOption" v-for="(option, option_index) in getSortKeys" :key="option_index">
@@ -13,7 +15,7 @@
         <arrow-down v-if="sortedStatuses[option]=='Down'"> </arrow-down>
         </p>
       </div>
-      
+      <hr/>
     </div>
     <div :class= "(index%2==0) ? 'jobItem' : 'jobItemGreyed'" v-for="(item, index) in jobData" :key="index">
         
@@ -43,6 +45,9 @@
     </div>
   </div>
 </template>
+
+
+<style>  @import '@/assets/css/skillsComponent.css'; </style>
 
 <script>
 import { BriefcaseOutline,
@@ -91,7 +96,7 @@ data: function () {
   {
 
     getImgUrl(img) {
-      var images = require.context('../assets/', false, /\.png$/)
+      var images = require.context('../assets/imgs/', false, /\.png$/)
       return images('./' + img + ".png")
     },
       toTitleCase: function(str) {
@@ -151,104 +156,3 @@ data: function () {
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-
-.jobItem, .jobItemGreyed  {
-    margin: 0.75em 0.5em 1.1em 1em;
-    padding: 0.75em 0.5em 0.75em 1em;
-    border: 1px dotted black;
-    text-align: left;
-    line-height: 1.3em;
-}
-
-.jobItemGreyed{
-    background-color: #f5f4f4;
-}
-.innerJobText
-{
-  width: 50vw;
-  display: block;
-  overflow:hidden;
-}
-
-
-.textContainer
-{
-  width: 67%;
-  overflow: hidden;
-
-}
-
-.imageContainer
-{
-  width:8vw;
-  max-width:100px;
-  min-width: 75px;
-  float:left;
-  display: block;
-  margin-right: 2vw;
-  margin-bottom: 1vh;
-}
-
-.companyLogoImg
-{
-  width:100%;
-  float:left;
-  margin-right: 2em;
-}
-.sorterFields
-{
-  display:inline;
-  position: relative;
-  cursor:pointer;
-  background-color: #e9e9e9;
-  margin-right: 1em;
-  font-size: 1.1em;
-  padding: 2px 7px 2px 7px;
-  border-radius: 0.25rem;
-  user-select:none;
-}
-
-.sorterFields:hover
-{
-  background-color: #d6d5d5;
-}
-
-.sortContainer
-{
-  text-align: left;
-  margin-left:1em;
-  margin-bottom:1em;
-}
-
-.jobIcon
-{
-  color:grey;
-  display: flex;
-  position: relative;
-  float:left;
-  margin-right: 0.5em;
-}
-
-.descrFont {
-  color: #2e2b2b;
-  font-size:1.05em;
-
-}
-
-.expandedText{
-  font-size:1.05em;
-}
-
-.sorterOption{
-  display:inline;
-  position: relative;
-  width: 50%;
-  border-right: 1px solid black;
-  margin-right: 1em;
-}
-
-
-</style>
