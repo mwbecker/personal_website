@@ -21,7 +21,7 @@ var JobsListingObject = {
                      location: "Pittsburgh, PA",
                      relevance_index : 5, 
                      type: 'job',
-                     description: "Preformed part ordering cost savings/analytics, developed a 3D blast furnace model prototype, and implemented a UI for uploading spreadhseets into a HiveSQLdb"
+                     description: "Preformed part ordering cost savings/analytics, developed a 3D blast furnace model prototype, and implemented a UI for uploading spreadhseets into a Hive database"
                   },  
                   {  project:'Mobile Application Development in iOS ', 
                      company:'Carnegie Mellon University',
