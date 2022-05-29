@@ -10,10 +10,10 @@ var JobsListingObject = {
                      logical_date: (new Date('Jun 01, 2021').getTime()),
                      location: "Pittsburgh, PA",
                      relevance_index : 6, 
-                     description: "Used VueJS, Flask, and HiveSQL Backend to build interactive steel manufacturing displays while documenting and communicating application design patterns with teammates",
+                     description: "Used VueJS, Flask, and HiveSQL backend to build interactive steel manufacturing displays while documenting and communicating application design patterns with teammates",
                      type: 'job'
                   }, 
-                  {  job_name:'Intern, Digital Studio Team', 
+                  {  job_name:'Co-op, Digital Studio Team', 
                      company:'US Steel',
                      dates_worked:'Jan 2020 - May 2021',
                      img_src: 'uss_logo',
@@ -21,7 +21,7 @@ var JobsListingObject = {
                      location: "Pittsburgh, PA",
                      relevance_index : 5, 
                      type: 'job',
-                     description: "Worked with Digital Studio team to preform part ordering cost savings/analytics, a 3D blast furnace model, and a universal UI for uploading spreadhseets into a hive data lake "
+                     description: "Preformed part ordering cost savings/analytics, developed a 3D blast furnace model prototype, and implemented a UI for uploading spreadhseets into a HiveSQLdb"
                   },  
                   {  project:'Mobile Application Development in iOS ', 
                      company:'Carnegie Mellon University',
@@ -31,7 +31,7 @@ var JobsListingObject = {
                      location: "Pittsburgh, PA",
                      relevance_index: 1,
                      type: 'school',
-                     description: "Worked on a team to develop multiplayer song guessing app using Spotify and Firebase apis"
+                     description: "Developed a multiplayer song guessing app on a team using Spotify and Firebase apis"
                   }, 
                   {  project:'Web Application Development Final Project', 
                      company:'Carnegie Mellon University',
@@ -41,7 +41,7 @@ var JobsListingObject = {
                      location: "Pittsburgh, PA",
                      relevance_index : 2, 
                      type: 'school',
-                     description: "Used ReactJS to create an item sharing service for CMU students and integrated Google Maps API to display item locations"
+                     description: "Created an item sharing service for CMU students with ReactJS and integrated Google Maps API to display item locations"
                   }, 
                   {  position:'Course Assistant, 67-272 Application Design & Development', 
                      company:'Carnegie Mellon University',
@@ -51,7 +51,7 @@ var JobsListingObject = {
                      location: "Pittsburgh, PA",
                      relevance_index : 4, 
                      type: 'school',
-                     description: "Used Bash, CI scripting, and Docker to manage Gitlab auto-grading server for Ruby on Rails projects"
+                     description: "Maintained Gitlab auto-grading server for Ruby on Rails projects by using Bash, CI scripting, and Docker to run an automated testing suite"
                   }, 
                   {  position:'Research Assistant', 
                      company:'Carnegie Mellon University',
@@ -62,7 +62,18 @@ var JobsListingObject = {
                      relevance_index : 3, 
                      type: 'school',
                      description: "Built several full stack Ruby on Rails apps for risk management projects"
-                  } 
+                  },
+                  {  
+                  project:'Application Design and Development', 
+                  company:'Carnegie Mellon University',
+                  dates_worked:'Jan 2019 - May 2019',
+                  img_src: 'cmu',
+                  logical_date: (new Date('Jan 01, 2019').getTime()),
+                  location: "Pittsburgh, PA",
+                  relevance_index : 7, 
+                  type: 'school',
+                  description: "Created a full stack e-commerce web app for a baking company using Ruby on Rails employing test-driven development"
+               } 
                ]
             )
          }

@@ -8,12 +8,12 @@
       <a> Sort By: </a> &nbsp;
       <!-- Iterate through fileds to sort and create buttons -->
       <div class = "sorterOption" v-for="(option, option_index) in getSortKeys" :key="option_index">
-        <p  @click = "toggleSort(option)" class = "sorterFields">  
+        <span  @click = "toggleSort(option)" class = "sorterFields">  
         <!-- If there is no expanded description mapped for sort field, display raw field -->
         <strong> {{(option in sortingDescrMapping) ? sortingDescrMapping[option] : toTitleCase(option.replace("_", " ")) }} </strong> 
         <arrow-up v-if="sortedStatuses[option]=='Up'"> </arrow-up>
         <arrow-down v-if="sortedStatuses[option]=='Down'"> </arrow-down>
-        </p>
+        </span>
       </div>
       <hr class = "filterContainer"/>
     </div>
