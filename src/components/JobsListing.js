@@ -51,7 +51,7 @@ var JobsListingObject = {
                      location: "Pittsburgh, PA",
                      relevance_index : 4, 
                      type: 'school',
-                     description: "Maintained Gitlab auto-grading server for Ruby on Rails projects by using Bash, CI scripting, and Docker to run an automated testing suite"
+                     description: "Maintained Gitlab auto-grading server for Ruby on Rails projects with Bash, CI scripting, and Docker to run an automated testing suite"
                   }, 
                   {  position:'Research Assistant', 
                      company:'Carnegie Mellon University',
