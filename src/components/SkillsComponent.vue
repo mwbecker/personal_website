@@ -24,7 +24,7 @@
          
             <table class="icons">
               <tr>
-              <td width ="30%" class = "icon" v-for="(icon, icon_index) in item.icons" :key="icon_index">
+              <td :width="(Math.floor(100/item.icons.length))+'%'" class = "icon" v-for="(icon, icon_index) in item.icons" :key="icon_index">
                 <img class ="icon_img" :src="getIcoUrl(icon)" >
               </td>
               </tr>
