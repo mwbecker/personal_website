@@ -21,6 +21,14 @@
         
         <div class = "imageContainer"> 
            <img class ="companyLogoImg" :src="getImgUrl(item.img_src)" >
+         
+            <table class="icons">
+              <tr>
+              <td width ="30%" class = "icon" v-for="(icon, icon_index) in item.icons" :key="icon_index">
+                <img class ="icon_img" :src="getIcoUrl(icon)" >
+              </td>
+              </tr>
+            </table>
         </div>
         
        <div class = "textContainer">
@@ -78,7 +86,7 @@ export default {
   },
 data: function () {
     return {
-     hide_data: ['type', 'logical_date', 'relevance_index', 'img_src'],
+     hide_data: ['type', 'logical_date', 'relevance_index', 'img_src', 'icons'],
      sortedStatuses: 
     {
       'logical_date': null,
@@ -97,6 +105,10 @@ data: function () {
 
     getImgUrl(img) {
       var images = require.context('../assets/imgs/', false, /\.png$/)
+      return images('./' + img + ".png")
+    },
+    getIcoUrl(img) {
+      var images = require.context('../assets/imgs/iconset', false, /\.png$/)
       return images('./' + img + ".png")
     },
       toTitleCase: function(str) {

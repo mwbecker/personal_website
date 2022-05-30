@@ -1,6 +1,6 @@
 .jobItem, .jobItemGreyed  {
     margin: 0.75em 0.5em 1.1em 1em;
-    padding: 0.75em 0.5em 0.75em 1em;
+    padding: 0.75em 0.5em 4vh 1em;
     border: 1px dotted black;
     text-align: left;
     line-height: 1.3em;
@@ -21,23 +21,24 @@
 {
   width: 67%;
   overflow: hidden;
+  padding-left:1em;
 
 }
 
 .imageContainer
 {
-  width:8vw;
-  max-width:100px;
+  width:9vw;
+  max-width:120px;
   min-width: 75px;
   float:left;
   display: block;
-  margin-right: 2vw;
+  margin-right: 2%;
   margin-bottom: 1vh;
 }
 
 .companyLogoImg
 {
-  width:100%;
+  width:90%;
   float:left;
   margin-right: 2em;
 }
@@ -96,4 +97,18 @@
 .filterContainer{
   margin-right: 0.5em;
   border: 0.5px solid #2e2b2b ;
+}
+
+.icon {
+  max-width: 60%;
+}
+
+.icon_img{
+  max-width: 100%;
+  min-width: 25px;
+
+}
+
+.icons{
+  width:100%;
 }
