@@ -36,7 +36,7 @@ var JobsListingObject = {
                      location: "Pittsburgh, PA",
                      relevance_index: 1,
                      type: 'school',
-                     tags:['experience'],
+                     tags:['education'],
                      description: "Developed a multiplayer song guessing app on a team using Spotify and Firebase apis"
                   }, 
                   {  project:'Web Application Development Final Project', 
@@ -48,7 +48,7 @@ var JobsListingObject = {
                      location: "Pittsburgh, PA",
                      relevance_index : 2, 
                      type: 'school',
-                     tags:['experience'],
+                     tags:['education'],
                      description: "Created an item sharing service for CMU students with ReactJS and integrated Google Maps API to display item locations"
                   }, 
                   {  position:'Course Assistant, 67-272 Application Design & Development', 
@@ -60,7 +60,7 @@ var JobsListingObject = {
                      location: "Pittsburgh, PA",
                      relevance_index : 4, 
                      type: 'school',
-                     tags:['experience'],
+                     tags:['education'],
                      description: "Maintained Gitlab auto-grading server for Ruby on Rails projects with Bash, CI scripting, and Docker to run an automated testing suite"
                   }, 
                   {  position:'Research Assistant', 
@@ -72,7 +72,7 @@ var JobsListingObject = {
                      location: "Pittsburgh, PA",
                      relevance_index : 3, 
                      type: 'school',
-                     tags:['experience'],
+                     tags:['experience', 'education'],
                      description: "Built several full stack Ruby on Rails apps for risk management projects"
                   },
                   {  
@@ -85,7 +85,7 @@ var JobsListingObject = {
                   location: "Pittsburgh, PA",
                   relevance_index : 7, 
                   type: 'school',
-                  tags:['experience'],
+                  tags:['education'],
                   description: "Created a full stack e-commerce web app for a baking company using Ruby on Rails employing test-driven development"
                } 
                ]

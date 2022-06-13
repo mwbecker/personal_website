@@ -24,7 +24,7 @@
       </div>
       <hr class = "filterContainer"/>
     </div>
-    <div :class= "(index%2==0) ? 'jobItem' : 'jobItemGreyed'" v-for="(item, index) in jobData" :key="index">
+    <div :class= "(index%2==0) ? 'jobItem' : 'jobItemGreyed'" v-for="(item, index) in activeItems" :key="index">
         
        <IconsComponent :item="item"> </IconsComponent>
         
@@ -85,6 +85,7 @@ data: function () {
     return {
      hide_data: ['type', 'logical_date', 'relevance_index', 'img_src', 'icons', 'tags'],
      filterCriteria: ['skills', 'experience','education', 'all'],
+     filtering: null,
      sortedStatuses: 
     {
       'logical_date': null,
@@ -156,9 +157,10 @@ data: function () {
     
         processFilterClick(event, filterCriterion)
         {
-                  setTimeout(this.closeNav, 10);
-
+          setTimeout(this.closeNav, 10);
           document.getElementById("filterTextInner").innerHTML = "<strong>" + this.toTitleCase(filterCriterion) + "</strong>"
+          this.filtering=filterCriterion;
+
           
        }
   },
@@ -188,7 +190,17 @@ data: function () {
      getSortKeys()
      {
        return Object.keys(this.sortedStatuses);
-     }
+     },
+
+      activeItems: function() {
+        var self = this;
+       return self.jobData.filter(function(i) {
+         if (self.filtering != null && self.filtering != 'all')
+            return i.tags.includes(self.filtering)
+        else
+            return true
+     })
+  }
   }
 }
 </script>
