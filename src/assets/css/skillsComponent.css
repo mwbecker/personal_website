@@ -99,6 +99,7 @@
 .filterContainer{
   margin-right: 0.5em;
   border: 0.5px solid #2e2b2b ;
+  z-index: 99;
 }
 
 
@@ -159,7 +160,8 @@
   color: #000000;
   text-decoration: none;
   cursor: pointer;
-  padding: 1.5px; /* Larger touch target area */
+  user-select: none;
+  padding: 2px; /* Larger touch target area */
 }
 
 .drop-down li:first-child a:after {
@@ -172,3 +174,5 @@
 .drop-down li:not(:first-child) a:hover{
   background-color: #b4b4b4;
 }
+
+

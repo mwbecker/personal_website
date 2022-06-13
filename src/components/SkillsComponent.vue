@@ -4,8 +4,8 @@
     <h3> Experience </h3>
 
 <div id = "dropdownContainer">
-<ul class="drop-down closed">
-    <li><a  id = "filterText" class="nav-button"> <strong> Filter </strong> </a></li>
+<ul id = "filterText" class="drop-down closed">
+    <li><a  id = "filterTextInner" onclick="location.href='#';"   class="nav-button"> <strong> Filter </strong> </a></li>
    <li @click="processFilterClick($event, filterCriterion)" v-for="(filterCriterion, filterCriteriaIndex) in filterCriteria" :key="filterCriteriaIndex"><a>{{toTitleCase(filterCriterion)}}</a></li>
   </ul>
   </div>
@@ -157,19 +157,23 @@ data: function () {
     
         processFilterClick(event, filterCriterion)
         {
-          event.target.parentNode.parentNode.classList.toggle('closed')
-          document.getElementById("filterText").innerHTML = "<strong>" + this.toTitleCase(filterCriterion) + "</strong>"
-        }
+                  setTimeout(this.closeNav, 10);
+
+          document.getElementById("filterTextInner").innerHTML = "<strong>" + this.toTitleCase(filterCriterion) + "</strong>"
+          
+       }
   },
   mounted: function()
   {
     var self = this;
      // Bind Click event to the drop down navigation button
-  document.querySelector('#dropdownContainer a').addEventListener('click', function() {
+    document.querySelector('#filterText').addEventListener('click', function() {
     /*  Toggle the CSS closed class which reduces the height of the UL thus 
         hiding all LI apart from the first */
       self.toggleNav();
   }, false);
+
+
 
   document.onclick = function (e) {
     if (e.target.class !== 'drop-down' && e.target.id !== 'filterText') {
