@@ -4,7 +4,7 @@
     <h3> Experience </h3>
 
 <ul class="drop-down closed">
-    <li><a id = "filterText" class="nav-button"> <strong> Filter </strong> </a></li>
+    <li><a  id = "filterText" class="nav-button"> <strong> Filter </strong> </a></li>
     <li @click="processFilterClick($event, filterCriterion)" v-for="(filterCriterion, filterCriteriaIndex) in filterCriteria" :key="filterCriteriaIndex"><a>{{toTitleCase(filterCriterion)}}</a></li>
   </ul>
   
@@ -94,6 +94,11 @@ data: function () {
     {
       document.getElementsByClassName("drop-down")[0].classList.add("closed");
     },
+      toggleNav(event)
+        {
+           event.target.parentNode.parentNode.classList.toggle('closed')
+
+        },
     sortingDescrMapping:
     {
       'logical_date':"Date",
@@ -149,6 +154,7 @@ data: function () {
           }
 
         },
+    
         processFilterClick(event, filterCriterion)
         {
           event.target.parentNode.parentNode.classList.toggle('closed')
@@ -158,7 +164,7 @@ data: function () {
   mounted: function()
   {
      // Bind Click event to the drop down navigation button
-  document.querySelector('.nav-button').addEventListener('click', function() {
+  document.querySelector('.drop-down li a').addEventListener('click', function() {
     /*  Toggle the CSS closed class which reduces the height of the UL thus 
         hiding all LI apart from the first */
     this.parentNode.parentNode.classList.toggle('closed')
