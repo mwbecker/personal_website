@@ -52,7 +52,9 @@
 </template>
 
 
-<style>  @import '@/assets/css/skillsComponent.css'; </style>
+<style>  @import '@/assets/css/skillsComponent.css'; 
+         @import '@/assets/css/dropdown.css';
+</style>
 
 <script>
 import { BriefcaseOutline,
