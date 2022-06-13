@@ -3,6 +3,11 @@
   <div class="main">
     <h3> Experience </h3>
 
+<ul class="drop-down closed">
+    <li><a id = "filterText" class="nav-button"> <strong> Filter </strong> </a></li>
+    <li @click="processFilterClick($event, filterCriterion)" v-for="(filterCriterion, filterCriteriaIndex) in filterCriteria" :key="filterCriteriaIndex"><a>{{toTitleCase(filterCriterion)}}</a></li>
+  </ul>
+  
     <div class = "sortContainer">
       <hr class = "filterContainer"/>
       <a> Sort By: </a> &nbsp;
@@ -41,7 +46,7 @@
          </div>
       </div>
     </div>
-  </div>
+    </div>
 </template>
 
 
@@ -78,16 +83,21 @@ export default {
 },
 data: function () {
     return {
-     hide_data: ['type', 'logical_date', 'relevance_index', 'img_src', 'icons'],
+     hide_data: ['type', 'logical_date', 'relevance_index', 'img_src', 'icons', 'tags'],
+     filterCriteria: ['skills', 'experience','education', 'all'],
      sortedStatuses: 
     {
       'logical_date': null,
-      'relevance_index': null
+    
+    },
+    closeNav()
+    {
+      document.getElementsByClassName("drop-down")[0].classList.add("closed");
     },
     sortingDescrMapping:
     {
       'logical_date':"Date",
-      'relevance_index':"Relevance"
+      
     },
      jobData : JobsListingObject.getJobs()
     }
@@ -138,10 +148,31 @@ data: function () {
             this.sortBy(field_name, "Up")
           }
 
+        },
+        processFilterClick(event, filterCriterion)
+        {
+          event.target.parentNode.parentNode.classList.toggle('closed')
+          document.getElementById("filterText").innerHTML = "<strong>" + this.toTitleCase(filterCriterion) + "</strong>"
         }
   },
   mounted: function()
   {
+     // Bind Click event to the drop down navigation button
+  document.querySelector('.nav-button').addEventListener('click', function() {
+    /*  Toggle the CSS closed class which reduces the height of the UL thus 
+        hiding all LI apart from the first */
+    this.parentNode.parentNode.classList.toggle('closed')
+  }, false);
+
+  var self = this;
+  document.onclick = function (e) {
+    if (e.target.class !== 'drop-down' && e.target.id !== 'filterText') {
+        if (e.target.offsetParent && e.target.offsetParent.id !== 'filterText')
+            self.closeNav()
+    }
+  }
+
+
   },
   computed:
   {

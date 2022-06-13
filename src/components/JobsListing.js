@@ -12,6 +12,7 @@ var JobsListingObject = {
                      location: "Pittsburgh, PA",
                      relevance_index : 6, 
                      description: "Used VueJS, Flask, and HiveSQL backend to build interactive steel manufacturing displays while documenting and communicating application design patterns with teammates",
+                     tags:['experience'],
                      type: 'job'
                   }, 
                   {  job_name:'Co-op, Digital Studio Team', 
@@ -23,6 +24,7 @@ var JobsListingObject = {
                      location: "Pittsburgh, PA",
                      relevance_index : 5, 
                      type: 'job',
+                     tags:['experience'],
                      description: "Preformed part ordering cost savings/analytics, developed a 3D blast furnace model prototype, and implemented a UI for uploading spreadhseets into a Hive database"
                   },  
                   {  project:'Mobile Application Development in iOS ', 
@@ -34,6 +36,7 @@ var JobsListingObject = {
                      location: "Pittsburgh, PA",
                      relevance_index: 1,
                      type: 'school',
+                     tags:['experience'],
                      description: "Developed a multiplayer song guessing app on a team using Spotify and Firebase apis"
                   }, 
                   {  project:'Web Application Development Final Project', 
@@ -45,6 +48,7 @@ var JobsListingObject = {
                      location: "Pittsburgh, PA",
                      relevance_index : 2, 
                      type: 'school',
+                     tags:['experience'],
                      description: "Created an item sharing service for CMU students with ReactJS and integrated Google Maps API to display item locations"
                   }, 
                   {  position:'Course Assistant, 67-272 Application Design & Development', 
@@ -56,6 +60,7 @@ var JobsListingObject = {
                      location: "Pittsburgh, PA",
                      relevance_index : 4, 
                      type: 'school',
+                     tags:['experience'],
                      description: "Maintained Gitlab auto-grading server for Ruby on Rails projects with Bash, CI scripting, and Docker to run an automated testing suite"
                   }, 
                   {  position:'Research Assistant', 
@@ -67,6 +72,7 @@ var JobsListingObject = {
                      location: "Pittsburgh, PA",
                      relevance_index : 3, 
                      type: 'school',
+                     tags:['experience'],
                      description: "Built several full stack Ruby on Rails apps for risk management projects"
                   },
                   {  
@@ -79,6 +85,7 @@ var JobsListingObject = {
                   location: "Pittsburgh, PA",
                   relevance_index : 7, 
                   type: 'school',
+                  tags:['experience'],
                   description: "Created a full stack e-commerce web app for a baking company using Ruby on Rails employing test-driven development"
                } 
                ]
