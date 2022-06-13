@@ -132,7 +132,8 @@
   font-size: 1.1em;
   width:8em;
   margin-left:11em;
-  margin-top: 0.2em;
+  margin-top: 0.4em;
+  display:block;
   position:absolute;
   padding: 0;
   z-index: 99;
@@ -148,7 +149,7 @@
   /*  When toggled via jQuery this class will reduce the height of the ul which inconjuction
       with overflow: hidden set on the ul will hide all list items apart from the first */
   /* current li height 38px + 5px border */
-  height: 30px;
+  height: 25px;
   border-radius: 0.25em;
 }
 
@@ -158,7 +159,7 @@
   color: #000000;
   text-decoration: none;
   cursor: pointer;
-  padding: 4px; /* Larger touch target area */
+  padding: 1.5px; /* Larger touch target area */
 }
 
 .drop-down li:first-child a:after {
