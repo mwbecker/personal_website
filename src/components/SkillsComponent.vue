@@ -17,8 +17,9 @@
         <span  @click = "toggleSort(option)" class = "sorterFields">  
         <!-- If there is no expanded description mapped for sort field, display raw field -->
         <strong> {{(option in sortingDescrMapping) ? sortingDescrMapping[option] : toTitleCase(option.replace("_", " ")) }} </strong> 
-        <arrow-up v-if="sortedStatuses[option]=='Up'"> </arrow-up>
-        <arrow-down v-if="sortedStatuses[option]=='Down'"> </arrow-down>
+        <span class = "arrowUp" v-if="sortedStatuses[option]=='Up'"> </span>
+        <span  class = "arrowDown" v-if="sortedStatuses[option]=='Down'"> </span>
+        <span  class = "arrowNone" v-if="sortedStatuses[option]!='Down' && sortedStatuses[option]!='Up'"> </span>
         </span>
       </div>
       <hr class = "filterContainer"/>
@@ -60,8 +61,6 @@ import { BriefcaseOutline,
          MapMarkerRadiusOutline,
          SchoolOutline,
          TextBoxOutline,
-         ArrowUp,
-         ArrowDown
 } from 'mdue';
 
 
@@ -78,8 +77,6 @@ export default {
     MapMarkerRadiusOutline,
     SchoolOutline,
     TextBoxOutline,
-    ArrowUp,
-    ArrowDown,
     IconsComponent,
 },
 data: function () {
