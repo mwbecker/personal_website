@@ -22,6 +22,11 @@
             transition: height 0.3s ease;
   }
   
+
+  .drop-down:hover{
+    background-color: #d6d5d5;
+  }
+
   .drop-down.closed {
     /*  When toggled via jQuery this class will reduce the height of the ul which inconjuction
         with overflow: hidden set on the ul will hide all list items apart from the first */
