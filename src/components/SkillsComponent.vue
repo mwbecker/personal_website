@@ -84,7 +84,7 @@ export default {
 data: function () {
     return {
      hide_data: ['type', 'logical_date', 'relevance_index', 'img_src', 'icons', 'tags'],
-     filterCriteria: ['skills', 'experience','education', 'all'],
+     filterCriteria: ['experience','education', 'all'],
      filtering: null,
      sortedStatuses: 
     {
