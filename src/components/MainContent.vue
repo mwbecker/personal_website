@@ -11,7 +11,7 @@
        that enable people to dynamically view and interact with data </p>
     <img @click="go_to_linkedin" class = "linkedinLink" src="../assets/imgs/linkedin.png">
     <img @click="go_to_github" class = "gitHubLink" src="../assets/imgs/github.png">
-
+    <a  href="./resume.pdf"><img class ="resumeLink" src="../assets/imgs/resume.png"></a>
     </div>
   </div>
 </template>
@@ -34,7 +34,8 @@ export default {
     go_to_github()
     {
       window.location.href = 'https://github.com/mwbecker'
-    }
+    },
+
   }
 }
 </script>
