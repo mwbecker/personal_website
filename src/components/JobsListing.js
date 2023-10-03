@@ -3,7 +3,20 @@ var JobsListingObject = {
          {
             return (
                [
-                     { job_name :'Full Stack Developer, Digital Studio', 
+
+                     {  job_name :'Application Architect 1, Digital Technologies', 
+                     company:'US Steel',
+                     dates_worked:'Jun 2022 - Present',
+                     img_src: 'uss_logo',
+                     icons: ['unity', 'blender', 'vue'],
+                     logical_date: (new Date('Jun 01, 2022').getTime()),
+                     location: "Pittsburgh, PA",
+                     relevance_index : 6, 
+                     description: "Used Unity 3D, Blender, and Microsoft Visual Studio to create end to end factory visualization and asset tracking. Learn and implement necessary web frameworks for data visualization projects.",
+                     tags:['experience'],
+                     type: 'job'
+                     }, 
+                     { job_name :'Managment Associate, Digital Studio', 
                      company:'US Steel',
                      dates_worked:'Jun 2021 - Present',
                      img_src: 'uss_logo',
