@@ -4,7 +4,7 @@ var JobsListingObject = {
             return (
                [
 
-                     {  job_name :'Application Architect 1, Digital Technologies', 
+                     {  job_name :'Application Architect I, Digital Technologies', 
                      company:'US Steel',
                      dates_worked:'Jun 2022 - Present',
                      img_src: 'uss_logo',
