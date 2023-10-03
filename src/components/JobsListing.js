@@ -8,7 +8,7 @@ var JobsListingObject = {
                      company:'US Steel',
                      dates_worked:'Jun 2022 - Present',
                      img_src: 'uss_logo',
-                     icons: ['unity', 'blender', 'vue'],
+                     icons: ['unity', 'blender', 'vs'],
                      logical_date: (new Date('Jun 01, 2022').getTime()),
                      location: "Pittsburgh, PA",
                      relevance_index : 6, 
