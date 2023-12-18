@@ -11,9 +11,9 @@
        that enable people to dynamically view and interact with data </p>
            <!-- <img @click="go_to_linkedin" class = "linkedinLink" src="../assets/imgs/linkedin.png"> -->
 
-    <img @click="go_to_linkedin" class = "linkedinLink" src="../assets/imgs/linkedin.png">
-    <img @click="go_to_github" class = "gitHubLink" src="../assets/imgs/github.png">
-    <a  href="./resume.pdf"><img class ="resumeLink" src="../assets/imgs/resume.png"></a>
+    <img @click="go_to_linkedin" class = "linkedinLink" :src="getImgUrl('linkedin')">
+    <img @click="go_to_github" class = "gitHubLink" :src="getImgUrl('github')">
+    <a  href="./resume.pdf"><img class ="resumeLink" :src="getImgUrl('resume')"></a>
     </div>
   </div>
 </template>
@@ -27,6 +27,11 @@ export default {
   },
   methods: 
   {
+    getImgUrl(img) {
+      var images = require.context('../assets/imgs/', false, /\.png$/)
+      return images('./' + img + ".png")
+    },
+
     go_to_linkedin()
     {
       window.location.href = 'https://www.linkedin.com/in/michael-b-428743125/'
